@@ -2,10 +2,16 @@ class RobotWorldApp < Sinatra::Base
   set :root, File.expand_path("..", __dir__)
 
   get "/" do 
-    "Hello, World"
+    haml :dashboard 
   end
 
   get "/robots" do
-    haml :dashboard 
+    @robots = ["robot1", "robot2", "robot3"]
+    haml :index
   end
+
+  get "/robots/new" do
+    haml :new
+  end
+
 end
