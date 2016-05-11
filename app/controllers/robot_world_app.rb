@@ -4,4 +4,8 @@ class RobotWorldApp < Sinatra::Base
   get "/" do 
     "Hello, World"
   end
+
+  get "/robots" do
+    haml :dashboard 
+  end
 end
