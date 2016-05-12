@@ -1,0 +1,31 @@
+%form{ :action => "/robots", :method => "post" }
+  %p 
+    Enter a new Robot!
+  %table
+    %tr 
+      %td Robot name:
+      %td 
+        %input{ :type => "text", :name => "robot[name]" }
+    %tr 
+      %td Robot city:
+      %td 
+        %input{ :type => "text", :name => "robot[city]" }
+    %tr 
+      %td Robot state:
+      %td 
+        %input{ :type => "text", :name => "robot[state]" }
+    %tr 
+      %td Robot birthdate:
+      %td 
+        %input{ :type => "text", :name => "robot[birthdate]" }
+    %tr 
+      %td Robot date hired:
+      %td 
+        %input{ :type => "text", :name => "robot[hired]" }
+    %tr 
+      %td Robot department:
+      %td 
+        %input{ :type => "text", :name => "robot[department]" }
+    %tr
+      %td
+        %input{ :type => "submit" }

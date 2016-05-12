@@ -1,0 +1,10 @@
+---
+robots:
+- id: 1
+  name: Henry
+  state: CO
+  avatar: 
+  birthdate: '0'
+  date_hired: 
+  department: Human Resources
+total: 1
