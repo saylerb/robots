@@ -3,6 +3,7 @@ require "models/robot_manager"
 
 class RobotWorldApp < Sinatra::Base
   set :root, File.expand_path("..", __dir__)
+  set :method_override, true
 
   get "/" do 
     haml :dashboard 
@@ -22,6 +23,16 @@ class RobotWorldApp < Sinatra::Base
     redirect "/robots"
   end
 
+  get "/robots/:id/edit" do |id|
+    @robot = robot_manager.find(id.to_i)
+    haml :edit
+  end
+
+  put "/robots/:id" do |id|
+    robot_manager.update(id.to_i, params[:robot])
+    redirect "/robots/#{id}"
+  end
+  
   get "/robots/:id" do |id|
     @robot = robot_manager.find(id.to_i) 
     haml :show
