@@ -1,8 +1,13 @@
-%h1 ALL ROBOTS
+%a{ :href => "/" } Home
+
+%h1 All Robots
 
 - @robots.each do |robot|
   %h3 
     =robot.id
-    %a{:href => "robots/#{robot.id}"}
+    %a{ :href => "/robots/#{robot.id}" }
       =robot.name
+  %a{ :href => "/robots/#{robot.id}/edit" }
+    Edit
+
 
