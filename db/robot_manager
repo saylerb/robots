@@ -7,4 +7,18 @@ robots:
   birthdate: '0'
   date_hired: 
   department: Human Resources
-total: 1
+- id: 2
+  name: Henry
+  state: Yeah
+  avatar: 
+  birthdate: ''
+  date_hired: 
+  department: ''
+- id: 3
+  name: Henry
+  state: Yeah
+  avatar: 
+  birthdate: ''
+  date_hired: 
+  department: ''
+total: 3
