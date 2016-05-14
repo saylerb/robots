@@ -1,4 +1,8 @@
 %h1 ALL ROBOTS
 
 - @robots.each do |robot|
-  %h3= robot 
+  %h3 
+    =robot.id
+    %a{:href => "robots/#{robot.id}"}
+      =robot.name
+
