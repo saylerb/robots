@@ -1,3 +1,5 @@
+require_relative "robot"
+
 class RobotManager
 
   attr_reader :database
