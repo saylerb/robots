@@ -33,4 +33,8 @@ class RobotManager
     raw_tasks.map { |robot| Robot.new(robot) }
   end
 
+  def find(id)
+    all.find { |robot| robot.id == id }
+  end
+
 end
