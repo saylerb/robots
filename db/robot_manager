@@ -21,4 +21,25 @@ robots:
   birthdate: ''
   date_hired: 
   department: ''
-total: 3
+- id: 4
+  name: Henry
+  state: CO
+  avatar: 
+  birthdate: '0'
+  date_hired: 
+  department: Human Resources
+- id: 5
+  name: Henry
+  state: CO
+  avatar: 
+  birthdate: '0'
+  date_hired: 
+  department: Human Resources
+- id: 6
+  name: Henry
+  state: CO
+  avatar: 
+  birthdate: '0'
+  date_hired: 
+  department: Human Resources
+total: 6
