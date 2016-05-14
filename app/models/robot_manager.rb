@@ -1,3 +1,5 @@
+require_relative "robot"
+
 class RobotManager
 
   attr_reader :database
@@ -18,8 +20,17 @@ class RobotManager
                               "birthdate" => robot[:birthdate],
                               "date_hired" => robot[:date_hired],
                               "department" => robot[:department] }
-
     end
+  end
+
+  def raw_tasks
+    database.transaction do
+      database["robots"] || []
+    end
+  end
+
+  def all
+    raw_tasks.map { |robot| Robot.new(robot) }
   end
 
 end
