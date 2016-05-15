@@ -55,4 +55,10 @@ class RobotManager
     end
   end
 
+  def delete_all
+    database.transaction do 
+      database["robots"] = []
+      database["total"] = 0
+    end
+  end
 end
