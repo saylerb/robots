@@ -50,4 +50,11 @@ class RobotManager
       target["department"] = robot[:department]
     end
   end
+
+  def destroy(id)
+    database.transaction do
+      database["robots"].delete_if { |robot| robot["id"] == id }
+    end
+  end
+
 end
