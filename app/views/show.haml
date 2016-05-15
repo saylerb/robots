@@ -1,21 +1,21 @@
-%a{ :href => "/robots"} 
-  Task Index
 %h1= @robot.name 
-%p
-  City:
-  = @robot.city
-%p 
-  State:
-  = @robot.state
-%p
-  Avatar:
-  = @robot.avatar
-%p 
-  Birthdate:
-  = @robot.birthdate
-%p
-  Date Hired:
-  = @robot.date_hired
-%p
-  Department:
-  = @robot.department
+
+%div{ :class => "well container col-sm-6 col-md-4" }
+  %a{ :href => "#", :class => "thumbnail" }
+    %img{ :src => @robot.avatar, :alt => @robot.name }
+
+  %p
+    City:
+    = @robot.city
+  %p 
+    State:
+    = @robot.state
+  %p 
+    Birthdate:
+    = @robot.birthdate
+  %p
+    Date Hired:
+    = @robot.date_hired
+  %p
+    Department:
+    = @robot.department

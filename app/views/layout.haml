@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %link{ :rel => "stylesheet", :href => "/css/bootstrap.css" }
+    %title
+      Robot World
+  %body
+    %div{ :class => "navbar navbar-default navbar-collapse" }
+      %a{ :href => "/", :class => "navbar-brand"} Robot World!!!
+      %ul{ :class => "nav navbar-nav navbar-right" }
+        %li
+          %a{ :href => "/robots"} Inventory
+        %li
+          %a{ :href => "/robots/new"} Activate New Robot 
+
+    %div{ :class => "container" }
+      =yield
+
+
+
+
+

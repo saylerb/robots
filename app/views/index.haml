@@ -1,15 +1,16 @@
-%a{ :href => "/" } Home
-
-%h1 All Robots
+%h1 Robot Inventory
 
 - @robots.each do |robot|
   %h3 
-    =robot.id
+    ="#{robot.id}:"
     %a{ :href => "/robots/#{robot.id}" }
       =robot.name
-  %a{ :href => "/robots/#{robot.id}/edit" }
-    Edit
-  %form{ :action => "/robots/#{robot.id}", :method => "POST" }
-    %input{ :type => "hidden", :name => "_method", :value => "DELETE" }
-    %input{ :type => "submit", :value => "delete robot" }
+    %div{ :class => "btn-group", :role => "group" }
+      %div{ :class => "btn-group", :role => "group" }
+        %a{ :href => "/robots/#{robot.id}/edit", :class => "btn btn-info", :role => "button" } Edit Robot
+
+      %div{ :class => "btn-group", :role => "group" }
+        %form{ :action => "/robots/#{robot.id}", :method => "POST", }
+          %input{ :type => "hidden", :name => "_method", :value => "DELETE" }
+          %button{ :type => "submit", :class => "btn btn-danger" } Delete Robot
 
