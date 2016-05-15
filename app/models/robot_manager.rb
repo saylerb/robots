@@ -1,5 +1,3 @@
-require_relative "robot"
-
 class RobotManager
 
   attr_reader :database
@@ -57,4 +55,10 @@ class RobotManager
     end
   end
 
+  def delete_all
+    database.transaction do 
+      database["robots"] = []
+      database["total"] = 0
+    end
+  end
 end
