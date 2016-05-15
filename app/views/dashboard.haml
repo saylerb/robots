@@ -1,9 +1,9 @@
 %h1 Welcome to Robot World  
 
-%ul
-  %li
-    %a(href="/robots")
-      Robot List
-  %li
-    %a(href="/robots/new")
-      Activate New Robot
+
+%div{ :class => "well container" }
+  %img{ :src => "images/robots.svg", :class => "center-block img-fluid" }
+  %ul
+    %div{ :class => "btn-group btn-group-justified", :role => "group" }
+      %a{ :href => "/robots", :class => "btn btn-primary btn-lg", :role => "button" } View Robot Inventory
+      %a{ :href => "/robots/new", :class => "btn btn-success btn-lg", :role => "button" } Activate New Robot
