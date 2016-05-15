@@ -5,9 +5,9 @@ require File.expand_path("../../config/environment", __FILE__)
 require "minitest/autorun"
 require "minitest/emoji"
 require "tilt/erb"
+require "capybara/dsl"
 
 module TestHelpers
-
   def setup
     robot_manager.create({ :name => "Bender",
                            :city => "Denver",
@@ -36,5 +36,14 @@ module TestHelpers
     @robot_manager ||= RobotManager.new(database)
   end
 end
+
+Capybara.app = RobotWorldApp
+
+class FeatureTest < Minitest::Test
+  include Capybara::DSL
+  include TestHelpers
+end
+
+
 
 
