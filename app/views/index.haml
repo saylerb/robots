@@ -9,5 +9,7 @@
       =robot.name
   %a{ :href => "/robots/#{robot.id}/edit" }
     Edit
-
+  %form{ :action => "/robots/#{robot.id}", :method => "POST" }
+    %input{ :type => "hidden", :name => "_method", :value => "DELETE" }
+    %input{ :type => "submit", :value => "delete robot" }
 
