@@ -3,6 +3,7 @@ class RobotWorldApp < Sinatra::Base
   set :method_override, true
 
   get "/" do 
+    @robot_stats ||= RobotStats.new(robot_manager)
     haml :dashboard 
   end
 
