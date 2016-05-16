@@ -7,3 +7,65 @@
     %div{ :class => "btn-group btn-group-justified", :role => "group" }
       %a{ :href => "/robots", :class => "btn btn-primary btn-lg", :role => "button" } View Robot Inventory
       %a{ :href => "/robots/new", :class => "btn btn-success btn-lg", :role => "button" } Activate New Robot
+
+
+%div{ :class => "well container" }
+
+  %h1 Robot Stats:
+  %h3 
+    Average Age:
+    = @robot_stats.average_age
+  %h3
+    Hires Per Year:
+  %table{ :class => "table-condensed" }
+    %thead
+      %tr
+        %th Year 
+        %th Number Robots Hired
+    %tbody
+      -@robot_stats.get_years.each do |data, num|
+        %tr
+          %td= data 
+          %td= num
+  %h3
+    States:
+  %table{ :class => "table-condensed" }
+    %thead
+      %tr
+        %th State 
+        %th Number Robots
+    %tbody
+      -@robot_stats.get_states.each do |data, num|
+        %tr
+          %td= data
+          %td= num
+
+  %h3
+    Departments:
+
+  %table{ :class => "table-condensed" }
+    %thead
+      %tr
+        %th Department 
+        %th Number Robots
+    %tbody
+      -@robot_stats.get_departments.each do |data, num|
+        %tr
+          %td= data
+          %td= num
+  %h3
+    Cities:
+
+  %table{ :class => "table-condensed" }
+    %thead
+      %tr
+        %th City 
+        %th Number Robots
+    %tbody
+      -@robot_stats.get_cities.each do |data, num|
+        %tr
+          %td= data
+          %td= num
+    
+
+
