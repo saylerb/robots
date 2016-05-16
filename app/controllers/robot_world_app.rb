@@ -1,5 +1,3 @@
-require "yaml/store"
-
 class RobotWorldApp < Sinatra::Base
   set :root, File.expand_path("..", __dir__)
   set :method_override, true
@@ -43,6 +41,7 @@ class RobotWorldApp < Sinatra::Base
   end
   
   def robot_manager
+
     database = YAML::Store.new("db/robot_manager")
     @robot_manager ||= RobotManager.new(database)
   end
